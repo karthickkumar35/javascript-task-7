@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="html-form">
+		<meta name="key-words" content="html-form,input,taxt-area,input-types,select,data-list">
+		<meta name="author" content="Berners-Lee">
+		<meta name="view-port" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="refresh" content="40">
+    </head>
+    <body>
+		<script>
+		 const users = [
+			  {
+				first_name: 'Mike',
+				last_name: 'Sheridan'
+			  },
+			  {
+				first_name: 'Tim',
+				last_name: 'Lee'
+			  },
+			  {
+				first_name: 'John',
+				last_name: 'Carte'
+			  }
+			];
+			let all=users.map (function (user){
+			 return user.first_name+user.last_name;
+			}
+			)
+			console.log(all);
+			document.write(all);
+			
+			const users1 = [
+				  {
+					first_name: 'Mike',
+					last_name: 'Sheridan',
+					age: 30
+				  },
+				  {
+					first_name: 'Tim',
+					last_name: 'Lee',
+					age: 45
+				  },
+				  {
+					first_name: 'John',
+					last_name: 'Carte',
+					age: 25
+				  }
+				];
+			let lastname=users1.map (function (user){
+			return user.last_name;
+			});
+			console.log(lastname);
+			document.write("<br>",lastname);
+			const users2 = [
+				  {
+					first_name: 'Mike',
+					location: 'London'
+				  },
+				  {
+					first_name: 'Tim',
+					location: 'US'
+				  },
+				  {
+					first_name: 'John',
+					location: 'Australia'
+				  }
+				];
+			let loc=users2.map(function(user){
+			return`${user.first_name} lives_in ${user.location}`;
+			});
+			console.log(loc);
+			document.write("<br>",loc);
+			
+			//employee
+			const employees = [
+				 {
+				 name: "David Carlson", 
+				 age: 30 
+				 },
+				 {
+				 name: "John Cena", 
+				 age: 34 
+				 },
+				 {
+				 name: "Mike Sheridan", 
+				 age: 25 
+				 },
+				 {
+				 name: "John Carte", 
+				 age: 50 
+				 }
+				];
+			const employee = employees.find(function (user) {
+				  return user.name.indexOf('John')>-1;
+				});
+	        console.log(employee);
+			document.write("<br>",	JSON.stringify(employee));
+			
+			//employee1
+			const employees1 = [
+				  { 
+				  name: 'David Carlson', 
+				  age: 30
+				  },
+				  {
+				  name: 'John Cena',
+				  age: 34 
+				  },
+				  {
+				  name: 'Mike Sheridan', 
+				  age: 25
+				  },
+				  { name: 'John Carte',
+				  age: 50 
+				  }
+				];
+
+				const employ = employees1.findIndex(function (employee) {
+				  return employee.name.indexOf('John') > -1;
+				});
+
+			console.log(employ);
+			document.write("<br>",	JSON.stringify(employ));
+			
+			const employees2 = [
+				  { 
+				  name: 'David Carlson', 
+				  age: 30 
+				  },
+				  {
+				  name: 'John Cena', 
+				  age: 34
+				  },
+				  { 
+				  name: 'Mike Sheridan',
+				  age: 25 
+				  },
+				  { 
+				  name: 'John Carte', 
+				  age: 50 
+				  }
+				];
+
+			const employe = employees2.filter(function (employee) {
+			  return employee.name.indexOf('John') > -1;
+			});
+			console.log(employe);
+			document.write("<br>",	JSON.stringify(employe));
+			
+			
+		const numbers = [1, 2, 3, 4, 5];
+			const multi = numbers.reduce(function (v1, v2) {
+			  ok= v1 * v2;
+			  return ok;
+			});
+		console.log(multi/3);
+		document.write("<br>",multi/3);
+		
+		
+		
+	const isObject = (val) => {
+    if (val === null) {
+        return false;
+    }
+    return typeof val === 'object';
+	};
+		const person = {
+		first_name: 'Monica',
+		last_name: 'Geller',
+		phone: '915-996-9739',
+		email: 'monica37@gmail.com',
+		address: {
+			street: {
+				street_num: '495',
+				street_name: 'Grove Street',
+			},
+			city: 'New York',
+			country: 'USA',
+			},
+		   };
+	const nestedObject = (obj) => {
+    for (const key in obj) {
+        if (isObject(obj[key])) {
+            nestedObject(obj[key]);
+        }
+		else {
+            console.log(`${key} => ${obj[key]}`);
+        }
+    }
+};
+
+nestedObject(person);
+	</script>
+	</body>
+</html>
